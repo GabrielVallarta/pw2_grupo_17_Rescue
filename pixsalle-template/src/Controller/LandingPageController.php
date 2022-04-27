@@ -34,8 +34,8 @@ class LandingPageController
                 'landing-page.twig',
                 [
                     'signUpLink' => $routeParser->urlFor('signUp'),
-                    'landingLink' => $routeParser->urlFor('landingPage'),
-                    'signInLink' => $routeParser->urlFor('signIn')
+                    'signInLink' => $routeParser->urlFor('signIn'),
+                    'landingLink' => $routeParser->urlFor('landingPage')
                 ]
             );
         }else{
@@ -44,8 +44,8 @@ class LandingPageController
                 'landing-page.twig',
                 [
                     'signUpLink' => $routeParser->urlFor('signUp'),
-                    'landingLink' => $routeParser->urlFor('landingPage'),
                     'signInLink' => $routeParser->urlFor('signIn'),
+                    'landingLink' => $routeParser->urlFor('landingPage'),
                     'username' => $_SESSION['email']
                 ]
             );

@@ -45,7 +45,9 @@ final class ChangePasswordController
                 $response,
                 'changePassword.twig',
                 [
-                    'formAction' => $routeParser->urlFor('changePassword')
+                    'formAction' => $routeParser->urlFor('changePassword'),
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
         }else{
@@ -83,6 +85,8 @@ final class ChangePasswordController
                 [
                     'formAction' => $routeParser->urlFor('changePassword'),
                     'formErrors' => $errors,
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
 
@@ -93,7 +97,9 @@ final class ChangePasswordController
                 'changePassword.twig',
                 [
                     'formAction' => $routeParser->urlFor('changePassword'),
-                    'formErrors' => $success
+                    'formErrors' => $success,
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
         }
