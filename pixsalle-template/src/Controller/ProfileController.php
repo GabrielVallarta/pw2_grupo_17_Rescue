@@ -56,7 +56,9 @@ final class ProfileController
                 [
                     'formAction' => $routeParser->urlFor('profile'),
                     'formData' => $dataSet,
-                    'formEmail' => $dataSet['email']
+                    'formEmail' => $dataSet['email'],
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
         }else{
@@ -118,7 +120,9 @@ final class ProfileController
                     'formAction' => $routeParser->urlFor('profile'),
                     'formData' => $data,
                     'formErrors' => $errors,
-                    'formEmail' => $dataSetEmail
+                    'formEmail' => $dataSetEmail,
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
 
@@ -131,7 +135,9 @@ final class ProfileController
                 [
                     'formAction' => $routeParser->urlFor('profile'),
                     'formData' => $data,
-                    'formErrors' => $errors
+                    'formErrors' => $errors,
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
         }

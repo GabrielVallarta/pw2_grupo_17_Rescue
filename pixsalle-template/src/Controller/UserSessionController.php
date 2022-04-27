@@ -26,7 +26,17 @@ class UserSessionController
     }
 
     public function showSignInForm(Request $request, Response $response): Response {
-        return $this->twig->render($response, 'sign-in.twig');
+
+        $routeParser = RouteContext::fromRequest($request)->getRouteParser();
+
+        return $this->twig->render(
+            $response,
+            'sign-in.twig',
+            [
+                'signUpLink' => $routeParser->urlFor('signUp'),
+                'signInLink' => $routeParser->urlFor('signIn')
+            ]
+        );
     }
 
     public function signIn(Request $request, Response $response): Response
@@ -76,7 +86,9 @@ class UserSessionController
             [
                 'formErrors' => $errors,
                 'formData' => $data,
-                'formAction' => $routeParser->urlFor('signIn')
+                'formAction' => $routeParser->urlFor('signIn'),
+                'signUpLink' => $routeParser->urlFor('signUp'),
+                'signInLink' => $routeParser->urlFor('signIn')
             ]
         );
     }

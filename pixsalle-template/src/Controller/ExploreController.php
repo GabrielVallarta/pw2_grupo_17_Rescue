@@ -45,7 +45,9 @@ final class ExploreController
             return $this->twig->render(
                 $response,
                 'explore.twig', [
-                    'pictures' => $pictures
+                    'pictures' => $pictures,
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
         }else{

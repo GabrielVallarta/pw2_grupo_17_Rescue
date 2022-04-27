@@ -52,7 +52,9 @@ final class MembershipController
                 [
                     'formAction' => $routeParser->urlFor('changePlan'),
                     'formMembershipFirst' => $plan,
-                    'formMembershipSecond' => !$plan
+                    'formMembershipSecond' => !$plan,
+                    'signUpLink' => $routeParser->urlFor('signUp'),
+                    'signInLink' => $routeParser->urlFor('signIn')
                 ]
             );
         }else{
