@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}
+      <link rel="stylesheet" href="/assets/css/styles.css"/>
+    {% endblock %}
+  </head>
+  <body>
+
+    <header>
+      <div>
+        <nav class="header-left">
+          <div class="logo-div">
+            <img
+                    class="logo"
+                    src="
+                  /assets/img/logo-pix-salle.png"
+                    width="120px"
+                    alt="Logo-PixSalle"
+            />
+          </div>
+          <div class="header-links">
+            <ul>
+              <li>
+                <a class="noLink activeText" href={{landingLink}}>
+                  Home
+                </a>
+              </li>
+              {% if username %}
+              <li>
+                <a class="noLink activeText" href="index.html">
+                  Profile
+                </a>
+              </li>
+              <li>
+                <a class="noLink activeText" href="index.html">
+                  Wallet
+                </a>
+              </li>
+              <li>
+                <a class="noLink activeText" href="index.html">
+                  Memberships
+                </a>
+              </li>
+              <li>
+                <a class="noLink activeText" href="index.html">
+                  Explore
+                </a>
+              </li>
+              <li>
+                <a class="noLink activeText" href="index.html">
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a class="noLink activeText" href="index.html">
+                  Blogs
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="header-ProfileSection">
+        <nav>
+          {% if username %}
+          <ul>
+            <li>
+              <a class="noLink activeText" href="index.html">
+                < USER NAME > {{ username }} <!-- TODO: Add the email if logged in -->
+              </a>
+            </li>
+            <li>
+              <div class="profile-section">
+                <img
+                        src="/assets/svg/person-svgrepo-com.svg"
+                        width="25px"
+                        alt="Profile Image"
+                >
+              </div>
+            </li>
+          </ul>
+            {%else%}
+              <ul>
+                <li>
+                  <button class="signUp-btn" role="link" onclick="window.location='{{signUpLink}}'">Sign Up</button>
+                </li>
+                <li>
+                  <button class="signUp-btn" role="link" onclick="window.location='{{signInLink}}'">Sign In</button>
+                </li>
+              </ul>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+      <div class="footerAndLogin">
+        <div class="footer-left">
+          <img
+                  class="logo"
+                  src="
+                  /assets/img/logo-pix-salle.png"
+                  width="120px"
+                  alt="Logo-PixSalle"
+          />
+          <h4>By Gabriel Vallarta Angulo</h4>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a
+                href="https://www.instagram.com/gabrielvallarta/?hl=es"
+                target="_blank"
+        >
+          <img
+                  src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png"
+                  alt="Instagram"
+          /></a>
+        <a href="https://www.behance.net/gabrielvallarta" target="_blank">
+          <img
+                  src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-512.png"
+                  alt="Facebook"
+          /></a>
+        <a
+                href="https://www.youtube.com/watch?v=jNQXAC9IVRw&ab_channel=jawed"
+                target="_blank"
+        >
+          <img
+                  src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png"
+                  alt="Youtube"
+          /></a>
+        <a
+                href="https://www.youtube.com/watch?v=jNQXAC9IVRw&ab_channel=jawed"
+                target="_blank"
+        >
+          <img
+                  src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-512.png"
+                  alt="Twitter"
+          /></a>
+      </div>
+    </footer>
+
+  </body>
+</html>

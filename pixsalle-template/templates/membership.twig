@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block title %}Membership{% endblock %}
+
+{% block content %}
+    <h1>Membership</h1>
+    <form action="{{ formAction }}" method="POST">
+        <input type="checkbox" name="cool" value="cool" {% if formMembershipFirst %}checked{% endif %}>
+        <input type="checkbox" name="active" value="active" {% if formMembershipSecond %}checked{% endif %}>
+        <input type="submit" value="Change plan">
+    </form>
+    {% if formErrors.password %}
+        <p>{{ formErrors.password }}</p>
+    {% endif %}
+{% endblock %}
